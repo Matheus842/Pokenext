@@ -1,3 +1,3 @@
 export default function Error(){<>
-    <p>Página não encontrada. :(</p>
+    <p>Página não encontrada.</p>
 </>}

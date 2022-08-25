@@ -39,6 +39,6 @@ export default function Home({pokemons}) {
       <Card key={pokemon.id} pokemon={pokemon}/>
     ))}
   </div>
-  <script src="../public/js/index.js"></script>
+  <script src="/js/index.js"></script>
   </>)
 }

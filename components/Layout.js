@@ -10,7 +10,7 @@ export default function Layout({children}){
             <link rel="shortcut icon" href="/img/favicon.ico" />
             <title>PokeNext</title>
         </Head>
-        <script src="../public/js/jquery-3.6.0.js"></script>
+        <script src="/js/jquery-3.6.0.js"></script>
         <Navbar />
         <main className="main-container">{children}</main>
         <Footer />

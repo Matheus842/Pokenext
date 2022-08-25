@@ -1,5 +1,6 @@
 import style from '../styles/Home.module.css'
 import Image from 'next/image'
+import Script from 'next/script'
 
 import Card from '../components/Card'
 
@@ -39,6 +40,5 @@ export default function Home({pokemons}) {
       <Card key={pokemon.id} pokemon={pokemon}/>
     ))}
   </div>
-  <script src="/js/index.js"></script>
   </>)
 }

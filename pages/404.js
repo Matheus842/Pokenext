@@ -1,3 +1,5 @@
-export default function(){<>
-    <p>Página não encontrada.</p>
-</>}
+export default function () {
+    return (<>
+        <p>Página não encontrada.</p>
+    </>)
+}

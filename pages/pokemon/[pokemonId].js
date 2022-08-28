@@ -1,6 +1,7 @@
-import Image from "next/image"
+import Image from "next/future/image"
 import style from "../../styles/Pokemon.module.scss"
 import Button from "../../components/Button"
+import Script from "next/script"
 
 import { useRouter } from "next/router"
 
@@ -51,61 +52,62 @@ export default function Pokemon({ pokemon, especie }) {
 
         let total = 0
 
-        for (let x of stats){
+        for (let x of stats) {
             total = total + x.base_stat
         }
 
         switch (name) {
-            case 'hp': return id/total*100
+            case 'hp': return id / total * 100
                 break;
 
-            case 'attack': return id/total*100
+            case 'attack': return id / total * 100
                 break;
 
-            case 'defense': return id/total*100
+            case 'defense': return id / total * 100
                 break;
 
-            case 'special-attack': return id/total*100
+            case 'special-attack': return id / total * 100
                 break;
 
-            case 'special-defense': return id/total*100
+            case 'special-defense': return id / total * 100
                 break;
 
-            case 'speed': return id/total*100
+            case 'speed': return id / total * 100
                 break;
-        
+
             default:
                 return 100
                 break;
         }
-        
+
     }
 
-    function color(id){
+    function color(id) {
         switch (id) {
-        case 'hp': return '#008000'
-            break;
+            case 'hp': return '#008000'
+                break;
 
-        case 'attack': return '#f42'
-            break;
+            case 'attack': return '#f42'
+                break;
 
-        case 'defense': return '#6cf'
-            break;
+            case 'defense': return '#6cf'
+                break;
 
-        case 'special-attack': return '#a59'
-            break;
+            case 'special-attack': return '#a59'
+                break;
 
-        case 'special-defense': return '#39f'
-            break;
+            case 'special-defense': return '#39f'
+                break;
 
-        case 'speed': return '#fc3'
-            break;
-    
-        default:
-            return '#000'
-            break;
+            case 'speed': return '#fc3'
+                break;
 
-    }}
+            default:
+                return '#000'
+                break;
+
+        }
+    }
 
     function Gen(gen) {
         gen = gen.replace('generation-', '')
@@ -143,7 +145,6 @@ export default function Pokemon({ pokemon, especie }) {
         </div>
 
         <h1 className={style.title}>{pokemon.name}</h1>
-
         <div className={imgType}>
             <Image
                 src={`https://cdn.traction.one/pokedex/pokemon/${pokemon.id}.png`}
@@ -189,12 +190,12 @@ export default function Pokemon({ pokemon, especie }) {
                 <ul className={style.listaPokemon}>
                     <li className={res1}>{res}</li>
                     {console.log(pokemon)}
-                    {pokemon.stats.map((index, valor)=>(<>
+                    {pokemon.stats.map((index, valor) => (<>
                         <li key={index} className={style.grid}>{pokemon.stats[valor].stat.name}:{pokemon.stats[valor].base_stat}</li>
                         <span className={style.Bar}>
-                            <p style={{"width": stats(pokemon.stats[valor].base_stat, pokemon.stats[valor].stat.name, pokemon.stats)+'%',"background-color": color(pokemon.stats[valor].stat.name)}}></p>
+                            <p style={{ "width": stats(pokemon.stats[valor].base_stat, pokemon.stats[valor].stat.name, pokemon.stats) + '%', "background-color": color(pokemon.stats[valor].stat.name) }}></p>
                         </span>
-                        </>))}
+                    </>))}
                 </ul>
             </details>
         </div>

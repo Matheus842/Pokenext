@@ -102,7 +102,7 @@ export default function Pokemon({ pokemon, especie }) {
             break;
     
         default:
-            return 100
+            return '#000'
             break;
 
     }}
@@ -192,7 +192,7 @@ export default function Pokemon({ pokemon, especie }) {
                     {pokemon.stats.map((index, valor)=>(<>
                         <li key={index} className={style.grid}>{pokemon.stats[valor].stat.name}:{pokemon.stats[valor].base_stat}</li>
                         <span className={style.Bar}>
-                            <p style={{"width": stats(pokemon.stats[valor].base_stat, pokemon.stats[valor].stat.name, pokemon.stats)+'%',"color": color(pokemon.stats[valor].base_stat)}}></p>
+                            <p style={{"width": stats(pokemon.stats[valor].base_stat, pokemon.stats[valor].stat.name, pokemon.stats)+'%',"background-color": color(pokemon.stats[valor].stat.name)}}></p>
                         </span>
                         </>))}
                 </ul>
